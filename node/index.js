@@ -11,6 +11,10 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
   console.log('a user connected');
   io.emit('sample', {"hey": "there"});
+  socket.on('sample', function(data) {
+  	socket.broadcast.emit('sample', data);
+  });
+  
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });

@@ -1,14 +1,8 @@
 # Set the base image to Ubuntu
-FROM        ubuntu
+FROM        node:latest
 
 # File Author / Maintainer
 MAINTAINER 	Sandy Place
-
-# Install Node.js and other dependencies
-RUN apt-get update && \
-    apt-get -y install curl && \
-    curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash - && \
-    apt-get -y install python build-essential nodejs
 
 # Install nodemon
 RUN npm install -g nodemon

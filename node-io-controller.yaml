@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: node-io
+  labels:
+    name: node-io
+spec:
+  replicas: 3
+  selector:
+    name: node-io
+  template:
+    metadata:
+      labels:
+        name: node-io
+    spec:
+      containers:
+      - name: node-io
+        image: gcr.io/titanium-diode-115804/node-io:v2
+        ports:
+        - containerPort: 8080
