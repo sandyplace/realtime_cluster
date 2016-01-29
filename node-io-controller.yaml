@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: node-io
-        image: gcr.io/titanium-diode-115804/node-io:v4
+        image: gcr.io/titanium-diode-115804/node-io:v5
         ports:
         - containerPort: 8080
