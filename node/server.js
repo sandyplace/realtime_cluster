@@ -9,5 +9,9 @@ var socketCluster = new SocketCluster({
   workerController: __dirname + '/worker.js',
   brokerController: __dirname + '/broker.js',
   socketChannelLimit: 1000,
+  brokerOptions: {
+  	host: 'redis',
+  	port: 6379
+  },
   crashWorkerOnError: argv['auto-reboot'] != false
 });
