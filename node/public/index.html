@@ -81,10 +81,6 @@
         console.log('CONNECTED');
       });
 
-      socket.on('rand', function (data) {
-        console.log('RANDOM STREAM: ' + data.rand);
-      });
-
       var sampleChannel = socket.subscribe('sample');
 
       sampleChannel.on('subscribeFail', function (err) {
