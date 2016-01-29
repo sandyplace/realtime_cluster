@@ -6,7 +6,6 @@ metadata:
     name: node-io
 spec:
   type: LoadBalancer
-  sessionAffinity: ClientIP
   ports:
   - port: 8080
   selector:
