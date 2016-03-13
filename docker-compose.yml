@@ -1,39 +1,36 @@
-#nginx:
-#    build: ./nginx
-#    links:
-#        - io_node1:io_node1
-#        - io_node2:io_node2
-#        - io_node3:io_node3
-#    ports:
-#        - "3000:3000"
-
 haproxy:
-    build: ./haproxy
+    image: rsiws/haproxy
     links:
         - io_node1:io_node1
         - io_node2:io_node2
         - io_node3:io_node3
+        - io_node4:io_node4
     ports:
-        - "3000:3000"
-
+        - "80:80"
 io_node1:
-    build: ./node
+    image: rsiws/messaging
     links:
         - redis
     ports:
-        - "3000"
+        - "8080"
 io_node2:
-    build: ./node
+    image: rsiws/messaging
     links:
         - redis
     ports:
-        - "3000"
+        - "8080"
 io_node3:
-    build: ./node
+    image: rsiws/messaging
     links:
         - redis
     ports:
-        - "3000"
+        - "8080"
+io_node4:
+    image: rsiws/messaging
+    links:
+        - redis
+    ports:
+        - "8080"
 redis:
     image: redis
     ports:

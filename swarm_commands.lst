@@ -1,0 +1,5 @@
+sudo docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock &
+sudo docker run -d swarm join --addr=10.0.0.228:2375 token://54c1d29a631fe8557afa7cab1ec491c6
+sudo docker run -d swarm join --addr=10.0.0.222:2375 token://54c1d29a631fe8557afa7cab1ec491c6
+
+docker run -d -p 2375:2375 swarm manage token://54c1d29a631fe8557afa7cab1ec491c6

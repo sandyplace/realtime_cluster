@@ -1,0 +1,28 @@
+version: '2'
+services:
+    io_node1:
+        image: rsiws/messaging
+        depends_on:
+            - redis
+        ports:
+            - "8080"
+    io_node2:
+        image: rsiws/messaging
+        depends_on:
+            - redis
+        ports:
+            - "8080"
+    io_node3:
+        image: rsiws/messaging
+        depends_on:
+            - redis
+        ports:
+            - "8080"
+    io_node4:
+        image: rsiws/messaging
+        depends_on:
+            - redis
+        ports:
+            - "8080"
+    redis:
+        image: redis
